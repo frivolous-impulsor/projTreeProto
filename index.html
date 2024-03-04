@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seed Selection</title>
+    <link rel="stylesheet" href="CSS/index.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+
+
+</head>
+<body>
+
+    <div class="container" >
+      
+          <nav class="navbar navbar-expand-md sticky-top">
+            <a class="navbar-brand toBeShadow" class="logo" href="index.html"> <p class="h3">BEEaTREE</p> </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+              <span class="navbar-toggler-icon "></span>
+            </button>
+
+            <ul class="navbar-nav collapse navbar-collapse justify-content-end" id="collapsibleNavbar">
+              <li class="nav-item pointer" v-for = "(link,index) in links" :key="index">
+                <a class="nav-link toBeShadow"  :class="{active: currentIndex == index}" @click="setIndex(index)"> <p class="h4">{{link.text}}</p> </a>
+              </li>
+            </ul>
+          </nav>
+
+          <div class="homePage" v-show="currentIndex==0">
+            <div class="stats">
+              <h4>Till This Moment</h4>
+              <p>0 People Participated</p>
+              <p>0 Seeds Were Planted</p>
+            </div>
+      
+            <div class="btns">
+              <ul class="px-0">
+                <li class="b h3 pointer toBeShadow mx-auto"><a  @click="setIndex(1)">How Do I Plant A Tree?</a></li>
+                <li class="b h3 pointer toBeShadow mx-auto"><a  @click="setIndex(2)">Where Can I Plant A Tree?</a></li>
+                <li class="b h3 pointer toBeShadow mx-auto"><a  @click="setIndex(3)">I'd Like To Contact Y'all</a></li>
+              </ul>
+            </div>
+          </div>
+          
+          <div class="seedPage" v-show="currentIndex==1">
+            <div class="seedList" v-show="!finalStep">
+          
+              <div >
+                <p class="h5">Select Seed</h1>
+              </div>
+    
+              <div class="seedMenu" v-show="!showSeedDetail">
+                <ul class="row d-flex align-items-center justify-content-center" >
+                  <li class=" col-lg-3 col-md-4 col-sm-6 col-10 pointer"  
+                  v-for="(seed, index) in seeds" 
+                  @click="currentSeedIndex = index; showSeedDetail = !showSeedDetail"
+
+                   >
+                  
+                    <img :src = "seed.imgOfSeed" alt="">
+                    <a class="toBeShadow ">
+                      <p class="text-center">{{seed.seedName}}</p>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+    
+              <div class="seedDetailPage " v-show="showSeedDetail">
+                <div class="info row">
+                  <div class="s col-md-4 ">
+                    <div class="picName row ">
+                      <img class="col-md-8" :src="seeds[currentSeedIndex].imgOfSeed" alt="">
+                      <p class="name col-md-4"> {{seeds[currentSeedIndex].seedName}} </p>
+                    </div>
+                
+                      <p class="seedInfo">
+                          {{ seeds[currentSeedIndex].seedInfo }}
+                      </p>
+                  </div>
+                  
+                  <div class="t row col-md-8">
+                    <img class='col-md-4' :src="seeds[currentSeedIndex].imgOfTree" alt="">
+    
+                    <div class="col-md-8 describ">
+                      <p class="name"> {{seeds[currentSeedIndex].treeName}} </p>
+                      <p> {{seeds[currentSeedIndex].treeInfo}} </p>
+                    </div>
+                    
+                  </div>
+                </div>
+                
+    
+                <div class=" row d-flex justify-content-around ">
+                  <a class="btn no col-md-6 toBeShadow" @click="setIndex(1)">No, Not This One</a>
+                  <a class="btn yes col-md-6 toBeShadow" href="" @click.prevent="finalStep = !finalStep" >Yes, I Wanna Plant This</a>
+                </div>
+              </div>
+              
+    
+            </div>
+    
+            <div class="finalWrap" v-show="finalStep">
+              <div class="steps">
+                <h1>step 1</h1>
+                <p>Saturate the seed</p>
+    
+                <h1>step 2</h1>
+                <p>Plant seed in a flowerpot</p>
+              </div>
+    
+              <div class="btn">
+                <a href="location.html">Where Can I Plant It?</a>
+              </div>
+    
+    
+            </div>
+          </div>
+
+          <div class="spotPage" v-show="currentIndex==2"></div>
+
+          <div class="contactPage row " v-show="currentIndex==3">
+            <div class="hi col " v-for="sec in contactSecs">
+              <div :class="sec" class="contactSec">
+
+                <p class="secHead h2" >{{sec}}</p>
+
+                <p v-for="ad in addresses(sec)"> 
+                  {{ad.name}}:
+                  < {{ad.email}} >
+    
+                </p>
+    
+              </div>
+            </div>
+          </div>
+        
+    </div>
+
+
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    <script>
+
+        const navLink = Vue.createApp({
+          data(){
+            return{
+              contactSecs: ['Web Writer','Tree Info','Tell Us Something'],
+              contactPersons: [
+                    {part: 'Web Writer', name: 'Oliver', email: 'oliverss.ultrapilot@gmail.com'},
+                    {part: 'Web Writer', name: 'Oliver', email: 'oliverss.ultrapilot@gmail.com'},
+                    {part: 'Tree Info', name: 'Oliver', email: 'oliverrr.ultrapilot@gmail.com'},
+                    {part: 'Tree Info', name: 'Oliver', email: 'oliverrr.ultrapilot@gmail.com'},
+                    {part: 'Tell Us Something', name: 'Oliver', email: 'oliveryy.ultrapilot@gmail.com'},
+                    {part: 'Tell Us Something', name: 'Oliver', email: 'oliveryy.ultrapilot@gmail.com'},
+
+                  ],
+
+              links : [
+                {text: "HOME", url: "homePage.html", status: ""},
+                {text: "SEEDS" , url:"seed.html", status: ""},
+                {text: "SPOTS" , url:"location.html", status: ""},
+                {text:  "CONTACT", url:"contact.html", status: "" }
+              ],
+
+              seeds : [
+                {seedName: 'Acorn', imgOfSeed: 'Images/acornPic.jpeg', seedInfo: 'nut of the oak. Acorns are usually seated in or surrounded by a woody cupule. They mature within one to two seasons, and their appearance varies depending on the species of oak. Acorns provide food for wildlife and are used to fatten swine and poultry.', treeName: 'Oak', imgOfTree: 'Images/oak.jpeg', treeInfo:'Oaks have spirally arranged leaves, with lobate margins in many species; some have serrated leaves or entire leaves with smooth margins. Many deciduous species are marcescent, not dropping dead leaves until spring. In spring, a single oak tree produces both staminate (male) flowers (in the form of catkins) and small pistillate (female) flowers,[4] meaning that the trees are monoecious. '},
+                {seedName: 'Acorn1', imgOfSeed: 'Images/acornPic.jpeg', seedInfo: 'falls during april', treeName: 'Oak', imgOfTree: 'Images/oak.jpeg', treeInfo:'tall'},
+                {seedName: 'Acorn2', imgOfSeed: 'Images/acornPic.jpeg', seedInfo: 'falls during april', treeName: 'Oak', imgOfTree: 'Images/oak.jpeg', treeInfo:'tall'},
+                {seedName: 'Acorn3', imgOfSeed: 'Images/acornPic.jpeg', seedInfo: 'falls during april', treeName: 'Oak', imgOfTree: 'Images/oak.jpeg', treeInfo:'tall'},
+                {seedName: 'Acorn3', imgOfSeed: 'Images/acornPic.jpeg', seedInfo: 'falls during april', treeName: 'Oak', imgOfTree: 'Images/oak.jpeg', treeInfo:'tall'},
+                {seedName: 'Acorn3', imgOfSeed: 'Images/acornPic.jpeg', seedInfo: 'falls during april', treeName: 'Oak', imgOfTree: 'Images/oak.jpeg', treeInfo:'tall'},
+                {seedName: 'Acorn3', imgOfSeed: 'Images/acornPic.jpeg', seedInfo: 'falls during april', treeName: 'Oak', imgOfTree: 'Images/oak.jpeg', treeInfo:'tall'},
+              ],
+
+              currentIndex: 0,
+              showSeedDetail: false,
+              currentSeedIndex: 0,
+              finalStep: false
+
+            }
+          },
+
+          methods: {
+                addresses(v) {
+                  return this.contactPersons.filter((person) => person.part == v)
+                },
+                setIndex(v) {
+                  if (v==1) {
+                    this.showSeedDetail= false,
+                    this.currentSeedIndex= 0,
+                    this.finalStep= false,
+                    this.currentIndex = v
+                  }
+                  else {
+                    this.currentIndex = v
+                  }
+                    
+                }
+
+
+              },  
+
+        
+
+        }).mount('body')
+
+    </script>
+
+    
+</body>
+</html>
+
+

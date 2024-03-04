@@ -1,0 +1,266 @@
+@import url('https://fonts.googleapis.com/css2?family=Caprasimo&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap');
+
+body {
+    background-image: url(/Images/keithTree.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+
+.container {
+
+
+    .toBeShadow:hover {
+        text-shadow: 1px 1px #ccc,
+                        2px 2px #ccc,
+    
+        
+
+    }
+    
+    font-family: 'Yeseva One', cursive;
+    a {
+        text-decoration: none;
+        color: black;
+    }
+
+    ul {
+        list-style-type: none;
+    }
+
+    .pointer {
+        cursor: pointer;
+    }
+
+    .b {
+        padding: 0.4em;
+        margin-bottom: 0.6em;
+        border: solid;
+
+        width: max-content;
+        box-shadow: 1px 1px;
+        box-shadow: 2px 2px;
+
+        
+
+    }
+
+
+
+
+    nav {
+        background-color: green;
+
+        border: solid;
+        border-radius: 0.2em;
+
+        button {
+            background-color: aliceblue;
+        }
+        
+        
+        
+
+
+
+        .navbar-brand {
+            background-color:white;
+            margin-left: 1em;
+
+            padding-left: 0.5em;
+            padding-right: 0.5em;
+            border-radius: 0.3em;
+            border-collapse: collapse;
+
+            p {
+                margin: 0%;
+            }
+
+
+        }
+
+        .active {
+            border: solid;
+            text-shadow: 1px 1px #ccc,
+                        2px 2px #ccc,
+        }
+
+        button {
+            margin-right: 1em;
+        }
+
+        .navbar-nav {
+            margin-right: 3em;
+
+
+            .nav-link {
+                border-radius: 0.2em;
+                p {
+                    margin: 0%;
+                }
+            }
+        }
+
+    }
+
+    .homePage {
+        padding: 0%;
+
+        .stats {
+            background-color: aliceblue;
+            border: solid;
+            border-radius: 0.2em;
+            padding: 0.5em;
+            width: fit-content;
+            margin: 0.5em;
+            margin-left: 0%;
+
+        }
+        
+        .btns {
+            ul {
+                margin-top: 5em;
+                li {
+                    background-color: yellow;
+
+
+
+                }
+            }
+
+        }
+    }
+
+    .seedPage{
+        .head {
+            margin: 1em;
+        }
+    
+        .seedList {
+            .seedMenu {
+                background-color: brown;
+                ul {
+                    margin: 0em;
+                    padding: 0%;
+                    border: solid;
+                    border-radius: 0.2em;
+                    li {
+                        background-color: yellow;
+                        width: min-content;
+                        padding: 0%;
+                        border: solid;
+                        border-radius: 0.2em;
+                        margin: 0.5em;
+                        img {
+                            padding: 0%;
+                            margin: 0.2em;
+                            width: 12em;
+                            border: solid;
+                            border-radius: 0.2em;
+                        }
+                        a {
+    
+                            padding: 0%;
+                            margin: 0%;
+                            align-items: center;
+        
+                        }
+    
+                        
+                    }
+                }
+            }
+    
+            .seedDetailPage {
+
+                
+    
+                
+                .info {
+                    background-color: white;
+                    margin: 0%;
+    
+                    border: solid;
+                    border-radius: 0.2em;
+    
+                    .s {
+                        padding-top: 1em;
+                        padding-bottom: 1em;
+    
+                        img {
+                            margin-left: 1em;
+                            padding: 0%;
+                            border: solid;
+                            width: 10em;
+                            border-radius: 0.2em;
+                            
+                        }
+                    }
+                    .t {
+                        padding-top: 1em;
+                        padding-bottom: 1em;
+    
+                        img {
+                            margin-left: 1em;
+                            padding: 0%;
+                            width: 12em;
+                            border: solid;
+                            border-radius: 0.5em;
+    
+                        }
+                    }
+                }
+    
+    
+            }
+    
+            .btn {
+                background-color: yellow;
+                margin-top: 2em;
+                width: max-content;
+                padding: 0.4em;
+                font-size: larger;
+                border: solid;
+                border-radius: 0.2em;
+                
+            }
+    
+            
+        }
+    }
+    
+    .contactPage {
+        padding: 0%;
+        margin: 0%;
+        
+
+        .hi {
+            width: max-content;
+            margin: 1em;
+            margin-top: 2em;
+            padding: 0%;
+            .contactSec {
+                background-color: yellow;
+
+                padding: 1em;
+    
+                border: solid;
+                border-radius: 0.3em; 
+                width: max-content;
+                width: fit-content;
+
+                .secHead {
+                    text-shadow: 1px 1px #ccc,
+                        2px 2px #ccc,
+                }
+            }
+        }
+    }
+    
+
+
+
+}
+

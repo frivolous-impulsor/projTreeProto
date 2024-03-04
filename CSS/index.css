@@ -1,0 +1,183 @@
+@import url("https://fonts.googleapis.com/css2?family=Caprasimo&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap");
+body {
+  background-image: url(/Images/keithTree.png);
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+.container {
+  font-family: "Yeseva One", cursive;
+}
+.container .toBeShadow:hover {
+  text-shadow: 1px 1px #ccc, 2px 2px #ccc;
+}
+.container a {
+  text-decoration: none;
+  color: black;
+}
+.container ul {
+  list-style-type: none;
+}
+.container .pointer {
+  cursor: pointer;
+}
+.container .b {
+  padding: 0.4em;
+  margin-bottom: 0.6em;
+  border: solid;
+  width: -moz-max-content;
+  width: max-content;
+  box-shadow: 1px 1px;
+  box-shadow: 2px 2px;
+}
+.container nav {
+  background-color: green;
+  border: solid;
+  border-radius: 0.2em;
+}
+.container nav button {
+  background-color: aliceblue;
+}
+.container nav .navbar-brand {
+  background-color: white;
+  margin-left: 1em;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  border-radius: 0.3em;
+  border-collapse: collapse;
+}
+.container nav .navbar-brand p {
+  margin: 0%;
+}
+.container nav .active {
+  border: solid;
+  text-shadow: 1px 1px #ccc, 2px 2px #ccc;
+}
+.container nav button {
+  margin-right: 1em;
+}
+.container nav .navbar-nav {
+  margin-right: 3em;
+}
+.container nav .navbar-nav .nav-link {
+  border-radius: 0.2em;
+}
+.container nav .navbar-nav .nav-link p {
+  margin: 0%;
+}
+.container .homePage {
+  padding: 0%;
+}
+.container .homePage .stats {
+  background-color: aliceblue;
+  border: solid;
+  border-radius: 0.2em;
+  padding: 0.5em;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0.5em;
+  margin-left: 0%;
+}
+.container .homePage .btns ul {
+  margin-top: 5em;
+}
+.container .homePage .btns ul li {
+  background-color: yellow;
+}
+.container .seedPage .head {
+  margin: 1em;
+}
+.container .seedPage .seedList .seedMenu {
+  background-color: brown;
+}
+.container .seedPage .seedList .seedMenu ul {
+  margin: 0em;
+  padding: 0%;
+  border: solid;
+  border-radius: 0.2em;
+}
+.container .seedPage .seedList .seedMenu ul li {
+  background-color: yellow;
+  width: -moz-min-content;
+  width: min-content;
+  padding: 0%;
+  border: solid;
+  border-radius: 0.2em;
+  margin: 0.5em;
+}
+.container .seedPage .seedList .seedMenu ul li img {
+  padding: 0%;
+  margin: 0.2em;
+  width: 12em;
+  border: solid;
+  border-radius: 0.2em;
+}
+.container .seedPage .seedList .seedMenu ul li a {
+  padding: 0%;
+  margin: 0%;
+  align-items: center;
+}
+.container .seedPage .seedList .seedDetailPage .info {
+  background-color: white;
+  margin: 0%;
+  border: solid;
+  border-radius: 0.2em;
+}
+.container .seedPage .seedList .seedDetailPage .info .s {
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+.container .seedPage .seedList .seedDetailPage .info .s img {
+  margin-left: 1em;
+  padding: 0%;
+  border: solid;
+  width: 10em;
+  border-radius: 0.2em;
+}
+.container .seedPage .seedList .seedDetailPage .info .t {
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+.container .seedPage .seedList .seedDetailPage .info .t img {
+  margin-left: 1em;
+  padding: 0%;
+  width: 12em;
+  border: solid;
+  border-radius: 0.5em;
+}
+.container .seedPage .seedList .btn {
+  background-color: yellow;
+  margin-top: 2em;
+  width: -moz-max-content;
+  width: max-content;
+  padding: 0.4em;
+  font-size: larger;
+  border: solid;
+  border-radius: 0.2em;
+}
+.container .contactPage {
+  padding: 0%;
+  margin: 0%;
+}
+.container .contactPage .hi {
+  width: -moz-max-content;
+  width: max-content;
+  margin: 1em;
+  margin-top: 2em;
+  padding: 0%;
+}
+.container .contactPage .hi .contactSec {
+  background-color: yellow;
+  padding: 1em;
+  border: solid;
+  border-radius: 0.3em;
+  width: -moz-max-content;
+  width: max-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.container .contactPage .hi .contactSec .secHead {
+  text-shadow: 1px 1px #ccc, 2px 2px #ccc;
+}/*# sourceMappingURL=index.css.map */
